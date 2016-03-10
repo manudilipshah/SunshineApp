@@ -2,12 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:clickable="false"
+    android:nestedScrollingEnabled="true"
+    android:orientation="vertical"
+    android:outlineProvider="none"
+    android:showDividers="beginning|end"
+    android:textAlignment="inherit">
 
     <EditText
         android:id="@+id/list_item_forecast_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:inputType="text" />
+        android:enabled="false"
+        android:textColor="#332116" />
 </LinearLayout>
