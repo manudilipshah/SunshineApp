@@ -1,12 +1,9 @@
 package app.com.learn.start.sunshine;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.InputType;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.Gravity;
@@ -18,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -84,7 +80,7 @@ public class ForecastFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        /*AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
 
         alertDialog.setTitle("Pincode");
 
@@ -108,7 +104,9 @@ public class ForecastFragment extends Fragment {
             }
         });
 
-        alertDialog.show();
+        alertDialog.show();*/
+
+        pinCode = "560102";
 
         String[] data = {
                 "Mon 6/23 - Sunny - 31/17",
@@ -136,7 +134,7 @@ public class ForecastFragment extends Fragment {
         weatherList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String forecast = mForecastAdapter.getItem(position);
+                String forecast = mForecastAdapter.getItem(position) + "Hello";
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(getActivity(), forecast, duration);
                 toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 0);
